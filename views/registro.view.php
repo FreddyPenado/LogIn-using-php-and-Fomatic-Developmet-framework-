@@ -22,7 +22,7 @@
                 <br>
                 <label for="">Nombre de usuario</label>
                 <div class="ui inverted left icon input">
-                    <input type="text" name="user" placeholder="Username...">
+                    <input type="text" name="users" placeholder="Username...">
                     <i class="users icon"></i>
                 </div>
                 <br>
@@ -39,6 +39,14 @@
                     </div>
                 <input type="submit" class="ui primary button" value="Registar">
             </div>
+
+            <?php if(!empty($errores)):?>
+                <div class=""ui error message">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
         </form>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="ui center label">¿Ya tienes una cuenta?
             <a href="login.php">Ingresa Aqui!</A></a>
