@@ -27,6 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if ($resultado != false){
             $errores .= '<li>El nombre de usuario ya existe</li>';
         }
+
+        $password1 = hash('sha512', $password1);
+        $password2 = hash('sha512', $password2);
+
+        if ($password1 != $password2){
+            $errores ='<li> Las contraseñas no cohinciden </li>';
+        }
+    }
+    if ($errores ==''){
+        $statement = $conexion->prepare('INSERT INTO usuarios (id, usuario, password) VALUES (null, :users, :password1)');
+        $statement->execute(array(':users' => $users, ':password1' => $password1));
+        header('Location: login.php');
     }
 }
 
